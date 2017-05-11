@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
   <head>
     <title>NaMie</title>
     <%= csrf_meta_tags %>
@@ -7,52 +7,64 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag "application" %>
 
+            <!-- Basic Page Needs
+            ================================================== -->
+            <meta charset="utf-8">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <link rel="icon" type="image/png" href="images/favicon.png">
+            <title>NaMie</title>
+            <meta name="description" content="">
+            <meta name="keywords" content="">
+            <meta name="author" content="">
+
    </head>
 
    <body>
 
-     <!-- Navigation Bar -->
-     <nav class="navbar navbar-fixed-top navbar-inverse">
-       <div class="container-fluid">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-             <span class="sr-only">Toggle navigation</span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="/">NaMie</a>
-         </div>
+     <header id="top-bar" class="navbar-fixed-top animated-header">
+         <div class="container">
+             <div class="navbar-header">
+                 <!-- responsive nav button -->
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 </button>
+                 <!-- /responsive nav button -->
 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           <form class="navbar-form navbar-right">
-             <div class="input-group">
-               <input type="text" class="form-control" placeholder="Search">
+                 <!-- logo -->
+                 <div class="navbar-brand">
+                     <a href="/" >
+                         <!-- <img src="assets/images/logo.png"> -->
+                         <%= image_tag('logo.png') %>
+                     </a>
+                 </div>
+                 <!-- /logo -->
              </div>
-             <div style="clear: both;"></div>
-           </form>
-           <ul class="nav navbar-nav navbar-right">
-             <li><span style="color: white; position: relative; top: 15px;">&nbsp;&nbsp;&nbsp;Hello, Friend!&nbsp;&nbsp;&nbsp; </li></span>
-             <li><a href="/about">Link Accounts</a></li>
-             <li><a href="/contact">Matches</a></li>
-             <li><a href="/contact">Favorites</a></li>
-
-             <li><a href="/sessions" data-method = "delete">Sign Out</a></li>
-
-             <li><a href="/sessions/new">Log In</a></li>
-             <li><a href="/users/new">Sign Up</a></li>
-
-           </ul>
-
-
-           <ul class="nav navbar-nav bottom-nav">
-             <li> <%= link_to 'Start Matching', remote: true %></li>
-           </ul>
-         </div><!-- /.navbar-collapse -->
-       </div><!-- /.container-fluid -->
-     </nav><br><br><br>
+             <!-- main menu -->
+             <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                 <div class="main-menu">
+                     <ul class="nav navbar-nav navbar-right">
+                         <li>
+                             <a href="/" >Home</a>
+                         </li>
+                         <li><%= link_to "Names", names_path %></li>
+                         <li><%= link_to "Matches", matches_path %></li>
+                         <li><a href="">Link Accounts</a></li>
+                         <% if user_signed_in? %>
+                           <!-- <li><a href="">Sign Out</a></li> -->
+                           <li><%= link_to 'Log Out', sessions_path, method: :delete %></li>
+                         <% else %>
+                           <li><a href="/users/new">Sign Up</a></li>
+                           <li><a href="/sessions/new">Log In</a></li>
+                         <% end %>
+                     </ul>
+                 </div>
+             </nav>
+             <!-- /main nav -->
+         </div>
+     </header>
 
 
     <% if flash[:notice] %>
@@ -61,26 +73,44 @@
       <div class="flash-alert"><%= flash[:alert] %></div>
     <% end %>
 
-
-    <%= yield %>
-
-<!-- footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-icon">
-    <!-- email -->
-      <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- facebook -->
-      <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- instagram -->
-      <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- medium -->
-      <i class="fa fa-medium fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- twitter -->
-      <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
-  </div>
-</footer>
+    <div class='container'>
+      <%= yield %>
+    </div><br><br><br><br><br>
+    <!-- ==================================================
+    Footer Section Start
+    ================================================== -->
+    <footer id="footer">
+        <div class="container">
+            <div class="col-md-8">
+                <p class="copyright">Copyright: <span>2017</span> . Designed and Developed by Josh Gamble</p>
+            </div>
+            <div class="col-md-4">
+                <!-- Social Media -->
+                <ul class="social">
+                    <li>
+                        <a href="https://www.facebook.com/CunningLinguist83" class="Facebook">
+                            <i class="ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/GamblesGames" class="Twitter">
+                            <i class="ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/josh-gamble" class="Linkedin">
+                            <i class="ion-social-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/user/VGElites" class="Google Plus">
+                            <i class="ion-social-googleplus"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
 
 </body>
 </html>
