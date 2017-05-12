@@ -1,0 +1,23 @@
+<br><br><br><br><br>
+<section id="feature">
+  <div class="col-md-12">
+    <div class="col-md-2">
+    </div>
+
+      <div class="col-md-8 card" style= "border: thick solid teal; background-color: white;">
+
+        <h1 style='text-align: center;'>Link Accounts</h1>
+
+        <%= form_tag partners_path do %>
+          <div class='form-group'>
+            Enter Your Partners <%= label_tag :email %> Address:
+            <%= email_field_tag :email, '', class: 'form-control' %>
+          </div><br>
+          <div class='form-group'>
+          <%= submit_tag 'Link Now', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+
+  </div>
+</section>

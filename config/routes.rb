@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 
   resources :favorites
 
+  resources :partners
+
 root 'home#index'
 end
