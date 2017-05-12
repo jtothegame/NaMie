@@ -1,8 +1,13 @@
 class PartnershipsController < ApplicationController
-
+before_action :authenticate_user!
 
   def new
-    @partnership = current_user.build_partnership(user_one: current_user)
+    if current_user.partnership
+      @partnership = current_user.partnership
+      render :show
+    else
+      @partnership = current_user.build_partnership(user_one: current_user)
+    end
   end
 
   def create
@@ -14,7 +19,8 @@ class PartnershipsController < ApplicationController
       user.partnership = @partnership
       user.save!
       @partnership.save!
-      redirect_to root flash[:notice] = "You've successfully linked to #{user_two.email}!"
+      current_user.save!
+      redirect_to root_path flash[:notice] = "You've successfully linked to #{@partnership.user_two_email}!"
     else
       flash[:alert] = 'There is no user associated with that email address!'
       render :new

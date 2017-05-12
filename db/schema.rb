@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512020500) do
+ActiveRecord::Schema.define(version: 20170512181412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170512020500) do
     t.integer  "popularity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "pronounced"
   end
 
   create_table "favorites", force: :cascade do |t|
