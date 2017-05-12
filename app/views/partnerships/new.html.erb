@@ -8,13 +8,13 @@
 
         <h1 style='text-align: center;'>Link Accounts</h1>
 
-        <%= form_tag partners_path do %>
+        <%= form_for @partnership do |f| %>
           <div class='form-group'>
-            Enter Your Partners <%= label_tag :email %> Address:
-            <%= email_field_tag :email, '', class: 'form-control' %>
+            Enter Your Partners <%= f.label :user_two_email %> Address:
+            <%= f.email_field :user_two_email, class: 'form-control' %>
           </div><br>
           <div class='form-group'>
-          <%= submit_tag 'Link Now', class: 'btn btn-primary' %>
+          <%= f.submit 'Link Now', class: 'btn btn-primary' %>
           </div>
         <% end %>
       </div>

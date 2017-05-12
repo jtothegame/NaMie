@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :favorites
 
-  resources :partners
+  resources :partnerships, only: [:new, :create]
 
 root 'home#index'
 end
