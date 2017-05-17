@@ -1,22 +1,17 @@
 
-User.new(name: "Josh",
+User.new(first_name: "Josh",
+         last_name: 'Gamble',
          email: "josh@gmail.com",
          password: "qweqwe",
          password_confirmation: "qweqwe").save(validate: false)
 puts "User Josh created!"
 
-User.new(name: "Natalie",
+User.new(first_name: "Natalie",
+         last_name: "Gamble",
          email: "natalie@gmail.com",
          password: "qweqwe",
          password_confirmation: "qweqwe").save(validate: false)
 puts "User Natalie created!"
-
-User.new(name: "Admin",
-         email: 'admin@gmail.com',
-         password: 'qweqwe',
-         password_confirmation: 'qweqwe',
-         admin: true).save(validate: false)
-puts "Admin created!"
 
 baby_names =
   [["Aaron",
@@ -768,13 +763,50 @@ baby_names =
     "M",
     "Zayn",
     "ZAYN",
-    211]]
+    211],
+    ["Aaliyah",
+    "Feminine form of AALI. It was popularized in the English-speaking world by the singer Aaliyah Haughton (1979-2001), who was known simply as Aaliyah.",
+    "F",
+    "Aleah, Alea, Aliah",
+    "a-LEE-a",
+    53],
+    ["Abigail",
+    "From the Hebrew name ('Avigayil) meaning 'my father is joy'. In the Old Testament this is the name of Nabal's wife. After Nabal's death she became the third wife of King David. As an English name, Abigail first became common after the Protestant Reformation, and it was popular among the Puritans. The biblical Abigil refers to herself as a servant, and beginning in the 17th century the name became a slang term for a servant, especially after the release of the play 'The Scornful Lady' (1616) which featured a character named Abigail. The name went out of fashion at that point, but it was revived in the 20th century.",
+    "F",
+    "Abbey, Abby, Gail, Gayle, Gaila",
+    "AB-i-gayl (English), AH-bee-giel (German)",
+    8],
+    ["Alexandra",
+    "Feminine form of ALEXANDER. In Greek mythology this was a Mycenaean epithet of the goddess Hera, and an alternate name of Cassandra. It was borne by several early Christian saints, and also by the wife of Nicholas II, the last czar of Russia. She was from Germany and had the birth name Alix, but was renamed Александра (Aleksandra) upon joining the Russian Church.",
+    "F",
+    "Alexandria, Alejandra, Alessandra, Oleksandra, Alex, Lexi, Sandy, Zandra, Alyx, Alessa",
+    "al-eg-ZAN-dra (English), ah-lek-SAHN-drah (German, Italian), ah-lek-SAHN-drah (Dutch)",
+    110],
+    ["Amanda",
+    "In part this is a feminine form of AMANDUS. However, it was not used during the Middle Ages. In the 17th century it was recreated by authors and poets who based it directly on Latin amanda 'lovable, worthy of love'. Notably, the playwright Colley Cibber used it for a character in his play 'Love's Last Shift' (1696). It came into regular use during the 19th century.",
+    "F",
+    "Mandi, Mandy, Amando, Amandine",
+    "a-MAN-da (English), ah-MAHN-dah (Spanish, Italian, German)",
+    329],
+    ["Anna",
+    "Form of Channah (see HANNAH) used in the Greek and Latin Old Testament. Many later Old Testament translations, including the English, use the Hannah spelling instead of Anna. The name appears briefly in the New Testament belonging to a prophetess who recognized Jesus as the Messiah. It was a popular name in the Byzantine Empire from an early date, and in the Middle Ages it became common among Western Christians due to veneration of Saint Anna (usually known as Saint Anne in English), the name traditionally assigned to the mother of the Virgin Mary. In the English-speaking world, this form came into general use in the 18th century, joining Ann and Anne. The name was borne by several Russian royals, including an 18th-century empress of Russia. It is also the name of the main character in Leo Tolstoy's novel 'Anna Karenina' (1877), about a married aristocrat who begins an ultimately tragic relationship with Count Vronsky.",
+    "F",
+    "Anissa, Anne, Keanna, Annetta, Anika, Anya, Anka, Annabelle, Antje",
+    "AN-a (English), AHN-nah (Italian, Dutch, Norwegian, Polish), AH-nah (German, Russian), AN-nah (Danish)",
+    51],
+    ["Anna",
+    "Form of Channah (see HANNAH) used in the Greek and Latin Old Testament. Many later Old Testament translations, including the English, use the Hannah spelling instead of Anna. The name appears briefly in the New Testament belonging to a prophetess who recognized Jesus as the Messiah. It was a popular name in the Byzantine Empire from an early date, and in the Middle Ages it became common among Western Christians due to veneration of Saint Anna (usually known as Saint Anne in English), the name traditionally assigned to the mother of the Virgin Mary. In the English-speaking world, this form came into general use in the 18th century, joining Ann and Anne. The name was borne by several Russian royals, including an 18th-century empress of Russia. It is also the name of the main character in Leo Tolstoy's novel 'Anna Karenina' (1877), about a married aristocrat who begins an ultimately tragic relationship with Count Vronsky.",
+    "F",
+    "Anissa, Anne, Keanna, Annetta, Anika, Anya, Anka, Annabelle, Antje",
+    "AN-a (English), AHN-nah (Italian, Dutch, Norwegian, Polish), AH-nah (German, Russian), AN-nah (Danish)",
+    51],
+  ]
 
     baby_names.each do |name, meaning, gender, related, pronounced, popularity|
 
       Baby.new(name: name, meaning: meaning, gender: gender,
                related: related, pronounced: pronounced,
-               popularity: popularity.save(validate: false)
+               popularity: popularity).save(validate: false)
     end
 
 

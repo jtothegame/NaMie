@@ -15,7 +15,7 @@ h6 {
 p {
   font-family: 'Roboto', sans-serif;
   line-height: 22px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
 }
 ul {
@@ -114,7 +114,7 @@ a:hover {
   position: relative;
 }
 #top-bar .main-menu li a {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   border-bottom: 2px solid transparent;
   -webkit-transition: .3s all;
