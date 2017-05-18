@@ -44,6 +44,8 @@ gem "font-ionicons-rails"
 
 gem 'simple_form'
 
+gem 'kaminari'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,25 +1,52 @@
 <br>
 <section id="feature">
-  <div class="col-md-12">
-    <div class="col-md-2">
+
+  <div class="col-md-12 tab-content">
+    <ul class="nav nav-tabs col-md-offset-2 col-md-8">
+      <li class="active"><a data-toggle="tab" href="#boys" style="color: blue;">Boys</a></li>
+      <li><a data-toggle="tab" href="#girls" style="color: rgba(242, 39, 234, 0.6);">Girls</a></li>
+    </ul>
+
+    <div id="boys" class="tab-pane fade in active">
+      <% @boys.each do |boy| %>
+        <div class="col-md-offset-2 col-md-8 card" style= "border: thick solid grey; background-color: rgba(25, 136, 250, 0.66);">
+          <hr>
+          <h1 style="text-align: center; font-size: 50px;"><%= boy.name %></h1><hr><br>
+          <p style="font-size: 20px; color: black;"> <strong>Meaning and History: </strong><%= boy.meaning %></p><br>
+          <p style="font-size: 20px; color: black;"><strong>Pronunciation: </strong><%= boy.pronounced %></p><br>
+          <p style="font-size: 20px; color: black;"><strong>Related names/Variants: </strong><%= boy.related %></p><br>
+          <p style="font-size: 20px; color: black;"> <strong>Popularity: </strong><%= boy.popularity %></p><br>
+        </div>
+        <div class="row">
+
+          <div class="container-fluid" style="justify-content: center; clear:both; width: 490px;">
+            <i class="ion-ios-close-outline" style='color:red'></i>
+            <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
+          </div>
+        </div>
+        <br>
+      <% end %>
     </div>
 
-      <div class="col-md-8 card" style= "border: thick solid teal; background-color: rgb(224, 192, 237);">
-        <hr>
-        <h1 style="text-align: center;"> A Name will go Here</h1><hr><br>
-        <p style="font-size: 20px;"> <strong>Meaning and History: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
-        <p style="font-size: 20px;"><strong>Pronunciation: </strong>Nay-ehm</p><br>
-        <p style="font-size: 20px;"><strong>Related names/Variants: </strong>Richard, Jeff, Nic</p><br>
-        <p style="font-size: 20px;"> <strong>Popularity: </strong>133</p><br>
-      </div>
-      <div class="row">
-
-        <div class="container-fluid" style="justify-content: center; clear:both; width: 490px;">
-          <i class="ion-ios-close-outline" style='color:red'></i>
-          <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
+    <div id="girls" class="tab-pane fade">
+      <% @girls.each do |girl| %>
+        <div class="col-md-offset-2 col-md-8 card" style= "border: thick solid grey; background-color: pink;">
+          <hr>
+          <h1 style="text-align: center; font-size: 50px;"><%= girl.name %></h1><hr><br>
+          <p style="font-size: 20px; color: black;"> <strong>Meaning and History: </strong><%= girl.meaning %></p><br>
+          <p style="font-size: 20px; color: black;"><strong>Pronunciation: </strong><%= girl.pronounced %></p><br>
+          <p style="font-size: 20px; color: black;"><strong>Related names/Variants: </strong><%= girl.related %></p><br>
+          <p style="font-size: 20px; color: black;"> <strong>Popularity: </strong><%= girl.popularity %></p><br>
         </div>
+        <div class="row">
 
-      </div>
-
+          <div class="container-fluid" style="justify-content: center; clear:both; width: 490px;">
+            <i class="ion-ios-close-outline" style='color:red'></i>
+            <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    </div>
   </div>
 </section>
