@@ -20,5 +20,8 @@ Rails.application.routes.draw do
 
   resources :partnerships, only: [:new, :create]
 
+  get "boy_names", to: "names#boy", as: "boy_names"
+  get "girl_names", to: "names#girl", as: "girl_names"
+
 root 'home#index'
 end

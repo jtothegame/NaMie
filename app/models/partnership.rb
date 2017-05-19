@@ -6,6 +6,6 @@ class Partnership < ApplicationRecord
   delegate :email, to: :user_one, allow_nil: true, prefix: true
   delegate :email, to: :user_two, allow_nil: true, prefix: true
 
-
+  # validates :email, uniqueness: true
 
 end

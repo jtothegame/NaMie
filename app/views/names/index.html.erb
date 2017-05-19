@@ -19,9 +19,11 @@
         </div>
         <div class="row">
 
-          <div class="container-fluid" style="justify-content: center; clear:both; width: 490px;">
+          <div class="container-fluid" style="justify-content: center; clear:both; width: 400px;">
             <i class="ion-ios-close-outline" style='color:red'></i>
             <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
+            <%= link_to 'Next', names_path(page: (@page.to_i + 1)) %>
+            
           </div>
         </div>
         <br>
@@ -40,9 +42,10 @@
         </div>
         <div class="row">
 
-          <div class="container-fluid" style="justify-content: center; clear:both; width: 490px;">
+          <div class="container-fluid" style="justify-content: center; clear:both; width: 400px;">
             <i class="ion-ios-close-outline" style='color:red'></i>
             <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
+            <%= link_to 'Next', names_path(page: (@page.to_i + 1)) %>
           </div>
         </div>
         <br>

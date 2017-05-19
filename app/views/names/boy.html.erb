@@ -1,0 +1,29 @@
+<br>
+<section id="feature">
+
+  <div class="col-md-12 tab-content">
+    <div id="boys" class="tab-pane fade in active">
+      <% @boys.each do |boy| %>
+        <div class="col-md-offset-2 col-md-8 card" style= "border: thick solid grey; background-color: rgba(25, 136, 250, 0.66);">
+          <hr>
+          <h1 style="text-align: center; font-size: 50px;"><%= boy.name %></h1><hr><br>
+          <p style="font-size: 20px; color: black;"> <strong>Meaning and History: </strong><%= boy.meaning %></p><br>
+          <p style="font-size: 20px; color: black;"><strong>Pronunciation: </strong><%= boy.pronounced %></p><br>
+          <p style="font-size: 20px; color: black;"><strong>Related names/Variants: </strong><%= boy.related %></p><br>
+          <p style="font-size: 20px; color: black;"> <strong>Popularity: </strong><%= boy.popularity %></p><br>
+        </div>
+        <div class="row">
+          <div class="container-fluid" style="justify-content: center; clear:both; width: 400px;">
+            <%= link_to boy_names_path(page: (@page.to_i + 1)) do %>
+              <i class="ion-ios-close-outline" style='color:red'></i>
+            <% end %>
+            <%= link_to boy_names_path(page: (@page.to_i + 1)) do %>
+            <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
+            <% end %>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</section>
