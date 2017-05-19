@@ -1,5 +1,6 @@
 class NamesController < ApplicationController
   before_action :authenticate_user!
+  before_action :like_baby
 
   def index
     # @page = params[:page] || 1
@@ -17,4 +18,14 @@ class NamesController < ApplicationController
     @girls = Baby.where(gender: 'F').order(:name).page(@page).per(1)
   end
 
+  private
+
+  def like_baby
+    if params[:like] == 'true'
+      liked_name = LikedName.new
+      liked_name.users_id = current_user.id
+      liked_name.babies_id = params[:baby_id]
+      liked_name.save
+    end
+  end
 end

@@ -1,55 +1,21 @@
-<br>
-<section id="feature">
-
-  <div class="col-md-12 tab-content">
-    <ul class="nav nav-tabs col-md-offset-2 col-md-8">
-      <li class="active"><a data-toggle="tab" href="#boys" style="color: blue;">Boys</a></li>
-      <li><a data-toggle="tab" href="#girls" style="color: rgba(242, 39, 234, 0.6);">Girls</a></li>
-    </ul>
-
-    <div id="boys" class="tab-pane fade in active">
-      <% @boys.each do |boy| %>
-        <div class="col-md-offset-2 col-md-8 card" style= "border: thick solid grey; background-color: rgba(25, 136, 250, 0.66);">
-          <hr>
-          <h1 style="text-align: center; font-size: 50px;"><%= boy.name %></h1><hr><br>
-          <p style="font-size: 20px; color: black;"> <strong>Meaning and History: </strong><%= boy.meaning %></p><br>
-          <p style="font-size: 20px; color: black;"><strong>Pronunciation: </strong><%= boy.pronounced %></p><br>
-          <p style="font-size: 20px; color: black;"><strong>Related names/Variants: </strong><%= boy.related %></p><br>
-          <p style="font-size: 20px; color: black;"> <strong>Popularity: </strong><%= boy.popularity %></p><br>
-        </div>
-        <div class="row">
-
-          <div class="container-fluid" style="justify-content: center; clear:both; width: 400px;">
-            <i class="ion-ios-close-outline" style='color:red'></i>
-            <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
-            <%= link_to 'Next', names_path(page: (@page.to_i + 1)) %>
-            
-          </div>
-        </div>
-        <br>
-      <% end %>
-    </div>
-
-    <div id="girls" class="tab-pane fade">
-      <% @girls.each do |girl| %>
-        <div class="col-md-offset-2 col-md-8 card" style= "border: thick solid grey; background-color: pink;">
-          <hr>
-          <h1 style="text-align: center; font-size: 50px;"><%= girl.name %></h1><hr><br>
-          <p style="font-size: 20px; color: black;"> <strong>Meaning and History: </strong><%= girl.meaning %></p><br>
-          <p style="font-size: 20px; color: black;"><strong>Pronunciation: </strong><%= girl.pronounced %></p><br>
-          <p style="font-size: 20px; color: black;"><strong>Related names/Variants: </strong><%= girl.related %></p><br>
-          <p style="font-size: 20px; color: black;"> <strong>Popularity: </strong><%= girl.popularity %></p><br>
-        </div>
-        <div class="row">
-
-          <div class="container-fluid" style="justify-content: center; clear:both; width: 400px;">
-            <i class="ion-ios-close-outline" style='color:red'></i>
-            <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
-            <%= link_to 'Next', names_path(page: (@page.to_i + 1)) %>
-          </div>
-        </div>
-        <br>
-      <% end %>
-    </div>
+<br><br><br><br><br><br><br><br><br>
+<div class='col-lg-12'>
+  <div class='col-md-2'>
   </div>
-</section>
+  <div class='col-md-8' style="text-align: center;">
+    <row>
+      <h1 style="text-align: center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We're Having A:</h1><br><br>
+    </row>
+    <row>
+    <%= link_to boy_names_path do %>
+      <%= fa_icon "male 4x", style: "color: blue; font-size: 250px;", class: "fa-6x" %>
+    <% end %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <%= link_to girl_names_path do %>
+      <%= fa_icon "female 4x", style: "color: pink; font-size: 250px", class: "fa-6x-girl" %>
+    <% end %>
+  </row>
+  <div class='col-md-2'>
+  </div>
+  </div>
+</div>

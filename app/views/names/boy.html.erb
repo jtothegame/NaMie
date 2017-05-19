@@ -14,11 +14,11 @@
         </div>
         <div class="row">
           <div class="container-fluid" style="justify-content: center; clear:both; width: 400px;">
-            <%= link_to boy_names_path(page: (@page.to_i + 1)) do %>
-              <i class="ion-ios-close-outline" style='color:red'></i>
+            <%= link_to boy_names_path(page: (@page.to_i + 1), like: false) do %>
+              <i class="ion-ios-close-outline user_dislike" style='color:red'></i>
             <% end %>
-            <%= link_to boy_names_path(page: (@page.to_i + 1)) do %>
-            <i class="ion-ios-checkmark-outline pull-right" style='color: green'></i>
+            <%= link_to boy_names_path(page: (@page.to_i + 1), like: true, baby_id: boy.id) do %>
+              <i class="ion-ios-checkmark-outline pull-right user_like" style='color: green'></i>
             <% end %>
           </div>
         </div>
