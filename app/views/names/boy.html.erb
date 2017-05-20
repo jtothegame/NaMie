@@ -15,7 +15,7 @@
         <div class="row">
           <div class="container-fluid" style="justify-content: center; clear:both; width: 400px;">
             <%= link_to boy_names_path(page: (@page.to_i + 1), like: false) do %>
-              <i class="ion-ios-close-outline user_dislike" style='color:red'></i>
+              <i class="ion-ios-close-outline user_dislike pull-left" id="nah" style='color:red'></i>
             <% end %>
             <%= link_to boy_names_path(page: (@page.to_i + 1), like: true, baby_id: boy.id) do %>
               <i class="ion-ios-checkmark-outline pull-right user_like" style='color: green'></i>

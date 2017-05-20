@@ -9,12 +9,12 @@ class Baby < ApplicationRecord
     self.find_by_sql([%q/
         SELECT babies.* FROM babies
           INNER JOIN (
-            SELECT babies_id FROM liked_names
-            WHERE users_id = ?
-              INTERSECT SELECT babies_id FROM liked_names
-              WHERE users_id = ?
+            SELECT baby_id FROM liked_names
+            WHERE user_id = ?
+              INTERSECT SELECT baby_id FROM liked_names
+              WHERE user_id = ?
           ) as baby_ids
-        ON babies.id = baby_ids.babies_id
+        ON babies.id = baby_ids.baby_id
       /, first_partner.id, second_partner.id
     ])
   end

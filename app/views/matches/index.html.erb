@@ -4,82 +4,28 @@
   <div class=col-lg-12>
     <div class="col-md-6">
 
-      <div class="col-md-12 card" style="border: thick solid grey; background-color: rgba(25, 136, 250, 0.66); height: 35vw">
+      <div class="col-md-12 card" style="border: thick solid grey; background-color: rgba(25, 136, 250, 0.66); min-height: 35vw">
         <hr>
         <h1 style="text-align: center;">
-          Boys Names you and *Partner* Match On</h1><hr><br>
+          Boys Names you and <%= current_user.partner.first_name %> Match On</h1><hr><br>
         <div class='col-sm-12'>
-          <div class='col-sm-4'>
-            <ul>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
-          <div class='col-sm-4'>
-            <ul>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
-          <div class='col-sm-4'>
-            <ul>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
+         <% @boys.each do |boy| %>
+           <h2 class="text-center"><%= boy.name %></h2>
+         <% end %>
         </div>
       </div>
     </div>
 
     <div class="col-md-6">
 
-      <div class="col-md-12 card" style="border: thick solid grey; background-color: pink; height: 35vw">
+      <div class="col-md-12 card" style="border: thick solid grey; background-color: pink; min-height: 35vw">
         <hr>
         <h1 style="text-align: center;">
-          Girls Names you and *Partner* Match On</h1><hr><br>
+          Girls Names you and <%= current_user.partner.first_name %> Match On</h1><hr><br>
         <div class='col-sm-12'>
-          <div class='col-sm-4'>
-            <ul>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
-          <div class='col-sm-4'>
-            <ul>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
-          <div class='col-sm-4'>
-            <ul>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-              <li>Name</li>
-            </ul>
-          </div>
+          <% @girls.each do |girl| %>
+            <h2 class="text-center"><%= girl.name %></h2>
+          <% end %>
         </div>
       </div>
     </div>
