@@ -6,11 +6,11 @@
 
       <div class="col-md-12 card" style="border: thick solid grey; background-color: rgba(25, 136, 250, 0.66); min-height: 35vw">
         <hr>
-        <h1 style="text-align: center;">
+        <h2 style="text-align: center; font-family: Cinzel">
           Boys Names you and <%= current_user.partner.first_name %> Match On</h1><hr><br>
         <div class='col-sm-12'>
          <% @boys.each do |boy| %>
-           <h2 class="text-center"><%= boy.name %></h2>
+           <h2 class="text-center" style="font-family: Acme"><%= boy.name %></h2>
          <% end %>
         </div>
       </div>
@@ -20,11 +20,11 @@
 
       <div class="col-md-12 card" style="border: thick solid grey; background-color: pink; min-height: 35vw">
         <hr>
-        <h1 style="text-align: center;">
+        <h2 style="text-align: center; font-family: Cinzel">
           Girls Names you and <%= current_user.partner.first_name %> Match On</h1><hr><br>
         <div class='col-sm-12'>
           <% @girls.each do |girl| %>
-            <h2 class="text-center"><%= girl.name %></h2>
+            <h2 class="text-center" style="font-family: Acme"><%= girl.name %></h2>
           <% end %>
         </div>
       </div>

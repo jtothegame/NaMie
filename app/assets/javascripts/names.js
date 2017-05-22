@@ -7,10 +7,6 @@ $(document).ready(function() {
     $('#feature').addClass('animated bounceOutRight');
   })
 
-  // $('.user_dislike').on('mouseenter', function() {
-  //   $('.user_dislike').toggleClass('animated tada');
-  // })
-
   $('.user_like').on('mouseenter', function() {
     $('.user_like').addClass('animated tada')
   })

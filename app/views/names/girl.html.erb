@@ -5,11 +5,11 @@
       <% @girls.each do |girl| %>
         <div class="col-md-offset-2 col-md-8 card" style= "border: thick solid grey; background-color: pink;">
           <hr>
-          <h1 style="text-align: center; font-size: 50px;"><%= girl.name %></h1><hr><br>
+          <h1 style="text-align: center; font-size: 60px; font-family: Lobster Two"><%= girl.name %></h1><hr><br>
           <p style="font-size: 20px; color: black;"> <strong>Meaning and History: </strong><%= girl.meaning %></p><br>
           <p style="font-size: 20px; color: black;"><strong>Pronunciation: </strong><%= girl.pronounced %></p><br>
           <p style="font-size: 20px; color: black;"><strong>Related names/Variants: </strong><%= girl.related %></p><br>
-          <p style="font-size: 20px; color: black;"> <strong>Popularity: </strong><%= girl.popularity %></p><br>
+          <p style="font-size: 20px; color: black;"> <strong>Popularity: </strong>#<%= girl.popularity %></p><br>
         </div>
         <div class="row">
           <div class="container-fluid" style="justify-content: center; clear:both; width: 400px;">
