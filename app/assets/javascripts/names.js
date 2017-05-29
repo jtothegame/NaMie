@@ -1,10 +1,25 @@
 $(document).ready(function() {
-  $('.user_dislike').on('click', function() {
+  $('.user_dislike').on('click', function(e) {
+    e.preventDefault();
+    var goTo = this.parentElement.getAttribute("href");
+
     $('#feature').addClass('animated bounceOutLeft');
+
+    setTimeout(function(){
+      window.location = goTo;
+    }, 300)
   })
 
-  $('.user_like').on('click', function() {
+  $('.user_like').on('click', function(e) {
+    e.preventDefault();
+
+    var goTo = this.parentElement.getAttribute("href");
+
     $('#feature').addClass('animated bounceOutRight');
+
+    setTimeout(function(){
+      window.location = goTo;
+    }, 300)
   })
 
   $('.user_like').on('mouseenter', function() {
